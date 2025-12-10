@@ -1,0 +1,576 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2/">
+      
+      
+        <link rel="next" href="../4/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Documentacion De La Practica - Funcionamiento ESP32 a traves de un LED - Plantilla para Documentación</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#documentacion-de-la-practica-funcionamiento-esp32-a-traves-de-un-led" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Plantilla para Documentación" class="md-header__button md-logo" aria-label="Plantilla para Documentación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Plantilla para Documentación
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Documentacion De La Practica - Funcionamiento ESP32 a traves de un LED
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Plantilla para Documentación" class="md-nav__button md-logo" aria-label="Plantilla para Documentación" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Plantilla para Documentación
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bienvenido
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sebastian Cortes - Introduccion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Documentación de la Práctica – Temporizador 555 (modo Astable)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentacion De La Practica - Funcionamiento ESP32 a traves de un LED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control de Motor DC con L298N y ESP32 (Velocidad y Dirección)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    📚 Documentación del Proyecto Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="documentacion-de-la-practica-funcionamiento-esp32-a-traves-de-un-led">Documentacion De La Practica - Funcionamiento ESP32 a traves de un LED</h1>
+<hr />
+<h1 id="1-resumen">1) Resumen</h1>
+<h2 id="nombre-del-proyecto-funcionamiento-esp32"><strong>Nombre del proyecto:</strong> Funcionamiento ESP32</h2>
+<h2 id="autor-sebastian-cortes"><strong>Autor:</strong>  Sebastián Cortes</h2>
+<h2 id="curso-asignatura-introduccion-a-la-mecatronica"><strong>Curso / Asignatura:</strong> Introduccion a la mecatronica</h2>
+<h2 id="fecha-05092025"><strong>Fecha:</strong> 05/09/2025</h2>
+<h2 id="descripcion-breve-el-objetivo-de-la-clase-fue-explorar-las-bases-del-funcionamiento-de-un-microcontrolador-esp-32-enfocado-hacia-la-programacion-en-arduino-para-demonstrar-el-potencial-del-microcontrolador-con-un-led"><strong>Descripción breve</strong>: El Objetivo de la clase fue explorar las bases del funcionamiento de un microcontrolador ESP-32, enfocado hacia la programacion en ARDUINO para demonstrar el potencial del microcontrolador con un LED</h2>
+<h1 id="-">-----------------------------------</h1>
+<h1 id="2-objetivos">2) Objetivos</h1>
+<h2 id="general-comenzar-con-las-bases-de-la-programacion-en-arduino-y-lograr-conectar-jumpers-xy-de-manera-correcta-para-el-uso-del-esp-32"><strong>General:</strong> Comenzar con las bases de la programacion en arduino y lograr conectar jumpers XY de manera correcta para el uso del ESP-32</h2>
+<h2 id="especificos"><strong>Específicos:</strong></h2>
+<h2 id="-disenar-el-circuito-con-valores-adecuados-de-resistencias-y-capacitores">- Diseñar el circuito con valores adecuados de resistencias y capacitores.</h2>
+<h2 id="-calcular-teoricamente-los-tiempos-alto-y-bajo-de-la-senal">- Calcular teóricamente los tiempos alto y bajo de la señal.</h2>
+<h2 id="-verificar-en-la-practica-el-correcto-parpadeo-del-led">- Verificar en la práctica el correcto parpadeo del LED.</h2>
+<h2 id="-comparar-resultados-teoricos-y-experimentales">- Comparar resultados teóricos y experimentales.</h2>
+<h1 id="-_1">-----------------------------------</h1>
+<h1 id="3-alcance-y-exclusiones">3) Alcance y Exclusiones</h1>
+<h2 id="incluye"><strong>Incluye:</strong></h2>
+<h3 id="implementacion-de-tres-programas-independientes-cargados-a-la-esp32">Implementación de tres programas independientes cargados a la ESP32.</h3>
+<h3 id="manera-de-conexion-y-uso-a-traves-de-bluetooth">Manera de Conexion y Uso a traves de Bluetooth</h3>
+<h3 id="uso-del-led-en-gpio-2-y-boton-en-gpio-4">Uso del LED en GPIO 2 y botón en GPIO 4.</h3>
+<h3 id="codigo-para-todos-los-ejercicios">Código para todos los ejercicios.</h3>
+<h2 id="-no-incluye">- <strong>No incluye:</strong></h2>
+<h3 id="-diseno-de-pcb">- Diseño de PCB.</h3>
+<h1 id="-_2">-----------------------------------</h1>
+<h1 id="4-requisitos">4) Requisitos</h1>
+<h2 id="hardware"><strong>Hardware</strong></h2>
+<h3 id="1-placa-de-programacion-tipo-esp32">1 × Placa de programacion tipo ESP32</h3>
+<h3 id="1-led">1 × LED</h3>
+<h3 id="1-resistencia-limitadora-220">1 × Resistencia limitadora (220 Ω)</h3>
+<h3 id="1-boton-pulsador">1 × Botón (pulsador)</h3>
+<h3 id="1-resistencia-pull-down-10-k">1 × Resistencia Pull-down (10 kΩ)</h3>
+<h3 id="1-protoboard-y-jumpers">1 × Protoboard y jumpers</h3>
+<h3 id="fuente-de-alimentacion-de-5-vdc">Fuente de alimentación de 5 VDC</h3>
+<h3 id="telefono-celular-android-con-bluetooth-y-aplicacion-bluetooth">Telefono Celular (ANDROID) con Bluetooth y aplicación Bluetooth</h3>
+<h2 id="conocimientos-previos"><strong>Conocimientos previos</strong></h2>
+<h3 id="-programacion-basica">- Programacion Basica</h3>
+<h3 id="-ley-de-ohm-y-calculo-de-resistencias">- Ley de Ohm y cálculo de resistencias</h3>
+<h3 id="-uso-de-protoboard-y-multimetro">- Uso de protoboard y multímetro</h3>
+<h1 id="-_3">-----------------------------------</h1>
+<h1 id="5-instalacion">5) Instalación</h1>
+<h2 id="montaje-del-protoboard">Montaje del protoboard:</h2>
+<h3 id="conectar-el-led-al-gpio-32-y-el-boton-al-gpio-33">Conectar el LED al GPIO 32 y el Botón al GPIO 33</h3>
+<h3 id="cargar-cada-uno-de-los-tres-codigos-de-forma-individual-a-la-esp32-para-verificar-su-funcionamiento">Cargar cada uno de los tres códigos de forma individual a la ESP32 para verificar su funcionamiento.</h3>
+<h2 id="pruebas">Pruebas :</h2>
+<h3 id="etapa-1-verificar-el-parpadeo-de-1-s">Etapa 1: Verificar el parpadeo de 1 s.</h3>
+<h3 id="etapa-2-verificar-el-encendido-solo-al-presionar-el-boton">Etapa 2: Verificar el encendido solo al presionar el botón.</h3>
+<h3 id="etapa-3-emparejar-por-bluetooth-y-enviar-comandos-high-low">Etapa 3: Emparejar por Bluetooth y enviar comandos HIGH / LOW.</h3>
+<h2 id="codigos-para-realizar-pruebas">Codigos para realizar Pruebas:</h2>
+<h1 id="_1">///////////////////////////////////</h1>
+<h2 id="1er-codigo-blink">1er Codigo - BLINK</h2>
+<h3 id="definicion-del-pin-del-led-const-int-ledpin-32">// Definición del pin del LED const int ledPin = 32; //</h3>
+<h3 OUTPUT_="OUTPUT);" id="void-setup" pinMode_ledPin_="pinMode(ledPin,">void setup()</h3>
+<h3 id="void-loop-enciende-el-led-digitalwriteledpin-high-delay1000-espera-1-segundo">void loop() { // Enciende el LED digitalWrite(ledPin, HIGH); delay(1000); // Espera 1 segundo</h3>
+<h3 id="apaga-el-led-digitalwriteledpin-low-delay1000-espera-1-segundo">// Apaga el LED digitalWrite(ledPin, LOW); delay(1000); // Espera 1 segundo }</h3>
+<h1 id="_2">///////////////////////////////////</h1>
+<h1 id="_3">///////////////////////////////////</h1>
+<h2 id="2ndo-codigo-pulsador">2ndo Codigo - PULSADOR</h2>
+<h3 id="definicion-de-pines-const-int-ledpin-33-led-en-gpio-2-const-int-buttonpin-4">// Definición de pines const int ledPin = 33; // LED en GPIO 2 const int buttonPin = 4; //</h3>
+<h3 El="El" INPUT_="INPUT);" OUTPUT_="OUTPUT);" _="//" botón="botón" con="con" conectado="conectado" está="está" externa="externa" id="void-setup_1" pinMode_buttonPin_="pinMode(buttonPin," pinMode_ledPin_="pinMode(ledPin," pull-down="pull-down" resistencia="resistencia" una="una">void setup()</h3>
+<h3 id="void-loop-leer-el-estado-del-boton-high-al-presionar-int-buttonstate-digitalreadbuttonpin">void loop() { // Leer el estado del botón (HIGH al presionar) int buttonState = digitalRead(buttonPin);</h3>
+<h3 id="escribir-el-estado-del-boton-directamente-al-led-digitalwriteledpin-buttonstate">// Escribir el estado del botón directamente al LED digitalWrite(ledPin, buttonState);</h3>
+<h3 id="delay0">delay(0); // }</h3>
+<h1 id="_4">///////////////////////////////////</h1>
+<h1 id="_5">///////////////////////////////////</h1>
+<h2 id="3er-codigo-control-bluetooth-a-traves-de-telefono-celular">3er Codigo - Control Bluetooth a traves de telefono celular</h2>
+<h3 id="bluetoothserial-serialbt-const-int-ledpin-2-string-message">BluetoothSerial SerialBT; const int ledPin = 2; String message = ""; //</h3>
+<h3 id="void-setup-serialbegin115200-pinmodeledpin-output">void setup() { Serial.begin(115200); pinMode(ledPin, OUTPUT);</h3>
+<h3 id="serialbtbeginesp32_control_led-nombre-del-dispositivo-bt-serialprintlnbluetooth-iniciado">SerialBT.begin("ESP32_Control_LED"); // Nombre del dispositivo BT Serial.println("Bluetooth iniciado."); }</h3>
+<h3 id="void-loop-if-serialbtavailable-char-incomingchar-serialbtread">void loop() { if (SerialBT.available()) { char incomingChar = SerialBT.read();</h3>
+<h3 id="if-incomingchar-n">if (incomingChar != '\n') {</h3>
+<h3 id="message-incomingchar">message += incomingChar;</h3>
+<h3 id="else">} else {</h3>
+<h3 id="messagetrim">message.trim();</h3>
+<h3 id="messagetouppercase">message.toUpperCase();</h3>
+<h3 id="serialprintcomando-recibido">Serial.print("Comando recibido: ");</h3>
+<h3 id="serialprintlnmessage">Serial.println(message);</h3>
+<h3 id="if-message-high">if (message == "HIGH") {</h3>
+<h3 id="digitalwriteledpin-high">digitalWrite(ledPin, HIGH);</h3>
+<h3 id="serialbtprintln-led-on">SerialBT.println(" LED ON");</h3>
+<h3 id="else-if-message-low">} else if (message == "LOW") {</h3>
+<h3 id="digitalwriteledpin-low">digitalWrite(ledPin, LOW);</h3>
+<h3 id="serialbtprintln-led-off">SerialBT.println(" LED OFF");</h3>
+<h3 id="else_1">} else {</h3>
+<h3 id="serialbtprintln-comando-invalido-use-high-o-low">SerialBT.println(" Comando inválido. Use HIGH o LOW.");</h3>
+<h3 id="_6">}</h3>
+<h1 id="_7">///////////////////////////////////</h1>
+<h1 id="6-resultados">6) Resultados</h1>
+<h2 id="practicos">Practicos:</h2>
+<h3 id="1-parpadeo-del-led">1. Parpadeo del LED</h3>
+<h3 id="2-pulsador-funcional">2. Pulsador funcional</h3>
+<h3 id="3-conexion-bluetooth">3. Conexion Bluetooth</h3>
+<h2 id="personales">Personales:</h2>
+<h3 id="logre-comprender-las-bases-de-la-programacion-utilizando-arduino-de-igual-manera-me-ayudo-a-entender-como-un-microcontrolador-puede-ser-muy-util-al-momento-de-realizar-un-proyecto">Logre comprender las bases de la programacion utilizando ARDUINO, de igual manera me ayudo a entender como un microcontrolador puede ser muy util al momento de realizar un proyecto</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tooltips"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
